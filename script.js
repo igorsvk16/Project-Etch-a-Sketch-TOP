@@ -9,6 +9,7 @@ function makeGrids(size) {
             row.style.border = "2px solid black";
             column.appendChild(row);
             row.classList.add("row");
+            row.style.opacity = 1;
             row.addEventListener("mouseenter", () => {
                 const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
                 const r = randomBetween(0, 255);
@@ -16,6 +17,7 @@ function makeGrids(size) {
                 const b = randomBetween(0, 255);
                 const rgb = `rgb(${r},${g},${b})`; // Collect all to a css color string
                 row.style.backgroundColor = rgb;
+                row.style.opacity -= 0.1;
             })
         }
         screen.appendChild(column);
